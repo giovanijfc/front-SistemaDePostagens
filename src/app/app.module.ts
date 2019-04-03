@@ -6,29 +6,37 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { PaginalPrincipalPage } from '../pages/paginal-principal/paginal-principal';
+
 import { HomePage } from '../pages/home/home';
+import { PaginaPrincipalPage } from '../pages/pagina-principal/pagina-principal';
+import { PaginaPrincipalPageModule } from '../pages/pagina-principal/pagina-principal.module';
+import { AuthService } from '../services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 
 @NgModule({
   declarations: [
     MyApp,
-    PaginalPrincipalPage,
     HomePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    PaginaPrincipalPageModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PaginalPrincipalPage,
-    HomePage
+    HomePage,
+    PaginaPrincipalPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService,
+    ErrorInterceptorProvider
   ]
 })
 export class AppModule {}

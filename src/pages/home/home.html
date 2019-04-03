@@ -1,36 +1,40 @@
 <ion-content padding>
 
-  <div>
-    <h3 text-align="center">LOGIN</h3>
-    <ion-item no-lines>
-      <span item-left>
-        <ion-icon name="md-mail"></ion-icon>
-      </span>
-      <ion-input clearInput class="input_login" type="text" placeholder="example@example.com"></ion-input>
-    </ion-item>
 
-    <ion-item no-lines>
-      <span class="lb_login" item-left>
-        <ion-icon class="icon_login" name="md-lock"></ion-icon>
-      </span>
-      <ion-input clearInput class="input_login" type="password" placeholder="**********"></ion-input>
-    </ion-item>
-  </div>
-  <div class="p_login">
-    <p>Esqueceu sua senha?</p>
-  </div>
+    <div>
+      <h3 text-align="center">LOGIN</h3>
+      <ion-item no-lines>
+        <span item-left>
+          <ion-icon name="md-mail"></ion-icon>
+        </span>
+        <ion-input [(ngModel)]="creds.email" name="senha" clearInput class="input_login" type="text"
+          placeholder="example@example.com"></ion-input>
+      </ion-item>
 
-  <div class="row">
-    <div class="col">
-      <button class="button_login1" ion-button block solid>
-        <p><b>Login</b></p>
-      </button>
+      <ion-item no-lines>
+        <span class="lb_login" item-left>
+          <ion-icon class="icon_login" name="md-lock"></ion-icon>
+        </span>
+        <ion-input [(ngModel)]="creds.senha" name="senha" clearInput class="input_login" type="password" placeholder="**********">
+        </ion-input>
+      </ion-item>
     </div>
-    <div class="col">
-      <button class="button_login2" ion-button block solid>
-        <p><b>Registrar</b></p>
-      </button>
+    <div class="p_login">
+      <p>Esqueceu sua senha?</p>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="button_login1" (click)="login()" ion-button block solid>
+          <p><b>Login</b></p>
+        </button>
+      </div>
+      <div class="col">
+        <button class="button_login2" ion-button block solid>
+          <p><b>Registrar</b></p>
+        </button>
+      </div>
+    </div>
+
 
 </ion-content>

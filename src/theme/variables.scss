@@ -13,7 +13,9 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
-
+$text-input-highlight-color-valid:transparent;
+$text-input-highlight-color-invalid:transparent;
+$text-input-md-highlight-color:transparent;
 
 // Shared Variables
 // --------------------------------------------------
@@ -34,7 +36,7 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #f4f4f4,
+  primary:    #1E90FF,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #87CEFA,
