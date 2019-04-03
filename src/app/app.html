@@ -1,14 +1,30 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" side="right">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
+    <div class="bg_div">
+    </div>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
+      <button menuClose class="align_button" ion-item (click)="openPage(pages[0])" right>
+        <ion-label>
+          <ion-icon name="md-contact"></ion-icon> {{pages[0].title}}
+        </ion-label>
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[1])" right>
+        <ion-label>
+          <ion-icon name="md-list-box"></ion-icon> {{pages[1].title}}
+        </ion-label>
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[2])" right>
+        <ion-label>
+          <ion-icon name="md-search"></ion-icon> {{pages[2].title}}
+        </ion-label>
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[3])"right>
+        <ion-label>
+          <ion-icon name="md-exit"></ion-icon>  {{pages[3].title}}
+        </ion-label>
       </button>
     </ion-list>
   </ion-content>

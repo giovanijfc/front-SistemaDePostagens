@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { PaginaPrincipalPage } from '../pages/pagina-principal/pagina-principal';
+import { PerfilPage } from '../pages/perfil/perfil';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   icons: String[] = [];
 
@@ -24,8 +25,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Pagina Principal', component:  PaginaPrincipalPage },
-      { title: 'Logout', component: HomePage}
+      { title: 'Perfil', component: PerfilPage },
+      { title: 'Pagina Principal', component: PaginaPrincipalPage },
+      { title: 'Pesquisar Grupos', component: "" },
+      { title: 'Sair', component: HomePage }
     ];
 
   }
@@ -34,15 +37,17 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.icons = ["md-list-box","search","person"]
+      this.icons = ["md-list-box", "search", "person"]
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    if (page.component == PerfilPage) {
+      this.nav.push(page.component)
+    } else {
+      this.nav.setRoot(page.component);
+    }
   }
 }
