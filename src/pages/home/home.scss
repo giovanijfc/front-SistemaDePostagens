@@ -1,3 +1,52 @@
 page-home {
 
+    .input_login{
+        border-radius: 30px !important;
+        padding-left: 30px !important;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        border: 1px solid #87CEFA;
+        background: #87CEFA;
+        border-bottom: 0px !important;
+        box-shadow: none !important;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h3{
+        text-align: center;
+        padding-bottom: 3%;
+        padding-top: 40%;
+        padding-bottom: 2%;
+        padding-left: 5%;
+        font-weight: bold;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .lb_login{
+        padding-right: 1.5%;
+    }
+
+    .p_login{
+        text-align: right;
+        margin-top: -1.5%;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-right: 2%;
+        font-size: 85%;
+        font-weight: bolder;
+    }
+
+    .button_login1{
+        background: #00BFFF;
+        border-radius: 50px;
+        width: 70%;
+        margin-left: 40%;
+        padding-top: -5%;
+    }
+    .button_login2{
+        background: #00BFFF;
+        border-radius: 50px;
+        width: 70%;
+        margin-left: 10%;
+    }
 }
