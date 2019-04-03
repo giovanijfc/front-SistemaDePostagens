@@ -27,8 +27,12 @@ export class HomePage {
   login(){
     this.authService.authenticate(this.creds)
      .subscribe(response => {
-      console.log(response);
+      this.authService.sucessfulLogin(response.headers.get('Authorization'));
+      this.navCtrl.setRoot("PaginaPrincipalPage");
      },
-     error => {console.log(error)})
+     error => {})
+  }
+  registrar(){
+    this.navCtrl.push('RegistrarPage');
   }
 }

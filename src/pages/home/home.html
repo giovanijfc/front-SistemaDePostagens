@@ -1,6 +1,4 @@
 <ion-content padding>
-
-
     <div>
       <h3 text-align="center">LOGIN</h3>
       <ion-item no-lines>
@@ -8,7 +6,7 @@
           <ion-icon name="md-mail"></ion-icon>
         </span>
         <ion-input [(ngModel)]="creds.email" name="senha" clearInput class="input_login" type="text"
-          placeholder="example@example.com"></ion-input>
+          placeholder="exemplo@exemplo.com"></ion-input>
       </ion-item>
 
       <ion-item no-lines>
@@ -20,7 +18,7 @@
       </ion-item>
     </div>
     <div class="p_login">
-      <p>Esqueceu sua senha?</p>
+      <p><b>Esqueceu sua senha?</b></p>
     </div>
 
     <div class="row">
@@ -30,7 +28,7 @@
         </button>
       </div>
       <div class="col">
-        <button class="button_login2" ion-button block solid>
+        <button class="button_login2" (click)="registrar()" ion-button block solid>
           <p><b>Registrar</b></p>
         </button>
       </div>
