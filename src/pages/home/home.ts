@@ -35,4 +35,8 @@ export class HomePage {
   registrar(){
     this.navCtrl.push('RegistrarPage');
   }
+
+  trocarSenha(){
+    this.navCtrl.push('TrocaSenhaPage');
+  }
 }

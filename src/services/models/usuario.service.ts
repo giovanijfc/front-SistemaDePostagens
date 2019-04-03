@@ -16,8 +16,8 @@ export class UsuarioService {
             `${API_CONFIG.baseUrl}/usuario/adicionarUsuario`,
             formGrupo,
             {
-                observe:"response",
-                responseType:"text"
+                observe: "response",
+                responseType: "text"
             }
         );
     }

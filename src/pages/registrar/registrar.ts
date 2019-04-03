@@ -43,7 +43,7 @@ export class RegistrarPage {
   }
   showInsertOk() {
     let alert = this.alertCtrl.create({
-      title: "Sucesso!",
+      title: "Status:200||Sucesso!",
       message: "Você foi registrado com sucesso!",
       enableBackdropDismiss: false,
       buttons: [{

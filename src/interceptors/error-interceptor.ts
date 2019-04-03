@@ -28,35 +28,47 @@ export class ErrorInterceptor implements HttpInterceptor{
              
             switch(errorObj.status){
             case 401:
-            this.handle401();
+            this.handle401(errorObj);
             break;    
             case 400:
-            this.defaultHandler(errorObj);
-            break; 
-            }
+            this.handle400(errorObj);
+            break;
+            case 403:  
+            this.handle403(errorObj)
+            break;
+            }           
              return Observable.throw(error);
          }) as any;
     }
 
-    handle401(){
+    handle401(obj:any){
         let alert = this.alertCtrl.create({
             title: 'Erro 401: Falha na autenticação',
-            message: 'Email ou senha incorretos!',
+            message:  obj.message,
             enableBackdropDismiss: false,
             buttons: ['OK']
           });
           alert.present();
         }
 
-    handle400(){
+    handle400(obj:any){
         let alert = this.alertCtrl.create({
-            title: 'Error 400: Invalid request',
-            message: 'E-mail already registered',
+            title: 'Erro 400: Requisição ruim ',
+            message: obj.message,
             enableBackdropDismiss: false,
             buttons: ['OK']
           });
           alert.present();
         }
+        handle403(obj:any){
+            let alert = this.alertCtrl.create({
+                title: 'Erro 403: Acesso Negado',
+                message: obj.message,
+                enableBackdropDismiss: false,
+                buttons: ['OK']
+              });
+              alert.present();
+            }
     
     
     defaultHandler(obj: any){

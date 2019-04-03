@@ -19,7 +19,6 @@ export class PaginaPrincipalPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PaginaPrincipalPage');
   }
 
 }

@@ -5,6 +5,8 @@ import { API_CONFIG } from "../config/api.config";
 import { LocalUser } from "../models/local_user";
 import { StorageService } from "./storage.service";
 import {JwtHelper} from 'angular2-jwt' ;
+import { NovaSenha } from "../models/novasenha.dto";
+import { httpFactory } from "@angular/http/src/http_module";
 
 
 @Injectable()
@@ -24,6 +26,15 @@ export class AuthService {
                 responseType: 'text'
             }
         );
+    }
+
+    novaSenha(newPass: NovaSenha){
+        return this.http.put(`${API_CONFIG.baseUrl}/auth/esqueciASenha`,
+        newPass,
+        {
+            observe: 'response',
+            responseType: 'text'
+        });
     }
 
     sucessfulLogin(authorizationValue: String){

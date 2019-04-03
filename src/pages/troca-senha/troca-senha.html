@@ -1,18 +1,40 @@
-<!--
-  Generated template for the TrocaSenhaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>troca-senha</ion-title>
+    <ion-title class="align_titulo">TROCAR SENHA</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-item class="lb_Form" no-lines>
+    <ion-label stacked>
+      <p class="p_Forgot">Email*</p>
+    </ion-label>
+    <ion-input class="input_login" [(ngModel)]="novaSenha.email" clearInput clear name="email" type="text" placeholder="OBRIGÁTORIO">
+    </ion-input>
+  </ion-item>
 
+  <ion-item class="lb_Form" no-lines>
+    <ion-label stacked>
+      <p class="p_Forgot">Palavra chave*</p>
+    </ion-label>
+    <ion-input class="input_login" [(ngModel)]="novaSenha.palavraChave" clearInput clear name="palavraChave" type="text"
+      placeholder="OBRIGÁTORIO"></ion-input>
+  </ion-item>
+
+  <ion-item class="lb_Form" no-lines>
+    <ion-label stacked>
+      <p class="p_Forgot">Nova senha*</p>
+    </ion-label>
+    <ion-input class="input_login" [(ngModel)]="novaSenha.novaSenha" clearInput clear name="newSenha" type="password"
+      placeholder="OBRIGÁTORIO"></ion-input>
+  </ion-item>
+
+  <div class="align_center">
+    <button class="button_registrar" ion-button (click)="trocarSenha()">
+      Continuar
+    </button>
+  </div>
 </ion-content>
