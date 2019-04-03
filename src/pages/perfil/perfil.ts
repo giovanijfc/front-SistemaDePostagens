@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UsuarioService } from '../../services/models/usuario.service';
+import { UsuarioDTO } from '../../models/usuario.dto';
 
 @IonicPage()
 @Component({
@@ -8,8 +10,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PerfilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  usuario: UsuarioDTO;
+
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public usuarioService: UsuarioService) {
   }
 
+  ionViewDidLoad() {
+    this.usuarioService.buscarPerfil()
+     .subscribe(response => {
+      this.usuario = response as UsuarioDTO;
+     },
+     error => {});
+  }
 
 }

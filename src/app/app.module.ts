@@ -11,25 +11,27 @@ import { AuthService } from '../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { StorageService } from '../services/storage.service';
-import { HomeModule } from '../pages/home/home.module';
 import { UsuarioService } from '../services/models/usuario.service';
-import { PerfilPageModule } from '../pages/perfil/perfil.module';
-import { PaginaPrincipalPageModule } from '../pages/pagina-principal/pagina-principal.module';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { HomePage } from '../pages/home/home';
 
 
 @NgModule({
   declarations: [
     MyApp,
+    HomePage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule,
-    HomeModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    PerfilPage,
+    HomePage,
   ],
   providers: [
     StatusBar,
