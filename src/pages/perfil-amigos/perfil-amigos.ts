@@ -17,7 +17,7 @@ import { UsuarioService } from '../../services/models/usuario.service';
 export class PerfilAmigosPage {
 
   usuario: any;
-  amizade: any;
+  amizade: any[] = [];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,

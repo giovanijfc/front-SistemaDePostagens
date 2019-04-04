@@ -16,8 +16,32 @@
     <p class="p_perfil"><b>{{usuario?.descricao}}</b></p>
   </div>
 
-    <div class="align_center">
-      <button ion-button full (click)="mudarAmigosPage()"><p class="p_perfil"><b>VER AMIGOS</b></p></button>
-    </div>
+  <div class="align_center">
+    <button ion-button full (click)="mudarAmigosPage()">
+      <p class="p_perfil"><b>VER AMIGOS</b></p>
+    </button>
+  </div>
+
+  <div class="align_center">
+    <ion-card *ngFor="let topico of topico" color="sexta" class="card_perfil">
+      <ion-item color="sexta">
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label stacked class="lbl3_perfil"><b>{{usuario?.nome}} em {{topico?.postPrincipal.data}} às
+            {{topico?.postPrincipal.hora}}</b></ion-label>
+      </ion-item>
+      <ion-card-content>
+        <p class="lbl4_perfil"><b>{{topico?.postPrincipal.texto}}</b></p>
+        <ion-label stacked (click)="mostrarResposta()" class="lbl3_perfil">Ver respostas:
+          {{topico?.postPrincipal.resposta.length}}</ion-label>
+      </ion-card-content>
+      <ion-card-content *ngFor="let res of topico.postPrincipal.resposta">
+        <div class="div2_perfil">
+          <ion-label stacked class="lbl3_perfil"><b>{{res?.usuario.nome}} em {{res?.data}} às
+              {{res?.hora}}</b></ion-label>
+          <ion-label class="lbl5_perfil"><b>{{res?.texto}}</b></ion-label>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
 </ion-content>

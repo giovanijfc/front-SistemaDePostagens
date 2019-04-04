@@ -13,7 +13,9 @@ import { TopicoService } from '../../services/models/topico.service';
 export class PerfilPage {
 
   usuario: UsuarioDTO;
-  amizade: any;
+  amizade: any[] = [];
+  topico: any[] = [];
+  mostrarRes: boolean = false;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -30,7 +32,8 @@ export class PerfilPage {
         this.usuario = response as UsuarioDTO;
         this.topicoService.buscarTodosPost(this.usuario.id)
         .subscribe(response => {
-          console.log(response);
+          this.topico = response;
+         console.log(this.topico);
         },
           error => {})
       },
@@ -43,5 +46,9 @@ export class PerfilPage {
 
   mudarAmigosPage() {
     this.navCtrl.push('AmigosPerfilPage', { nome: this.usuario.nome, amizade: this.amizade })
+  }
+  mostrarResposta(){
+    this.mostrarRes = true;
+    console.log("passo aq");
   }
 }

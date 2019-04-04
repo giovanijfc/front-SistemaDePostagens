@@ -26,14 +26,40 @@ page-perfil {
         font-size: 120%;
         color: black;
     }
+    .lbl3_perfil{
+        text-align: right;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 60%;
+        color: black;
+    }
+    .lbl4_perfil{
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 115%;
+        color: black;
+    }
+    .lbl5_perfil{
+        text-align: right;
+        color:black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 95%;
+    }
     .div_perfil{
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        margin-bottom: 3%;
+    }
+    .div2_perfil{
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
     }
     .p_perfil{
         text-align: center;
         text-align: 100%;
         color: black;
+    }
+    .card_perfil{
+        margin-top: 5%;
     }
 }
 
