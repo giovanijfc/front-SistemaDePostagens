@@ -11,4 +11,94 @@ page-pagina-principal {
     .bg_perfil{
         background: rgba(105, 105, 105, 0.26);
     }
+    .align2_center{
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        border-right: 1px solid #1E90FF;
+        border-left: 1px solid #1E90FF;
+        border-top: 1px solid #1E90FF;
+        border-bottom: 1px solid #1E90FF;
+        margin-top: 3%;
+    }
+    .img_Perfil{
+        width: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 5px gray;
+        display: inline-block;
+        margin-top: -2.5%;
+    }
+    .bg_perfil{
+        background: rgba(105, 105, 105, 0.30);
+    }
+    .lbl_perfil{
+        margin-right: 25%;
+        text-align: right;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 80%;
+        color: black;
+    }
+    .lbl2_perfil{
+        margin-top: -0.5%;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 120%;
+        color: black;
+    }
+    .lbl3_perfil{
+        text-align: right;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 60%;
+        color: black;
+    }
+    .lbl4_perfil{
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 115%;
+        color: black;
+    }
+    .lbl5_perfil{
+        text-align: right;
+        color:black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 95%;
+    }
+    .lbl6_perfil{
+        text-align: right;
+        color:black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 85%;
+    }
+    .div_perfil{
+        border-bottom: 1px solid #1E90FF;
+        border-top: 1px solid #1E90FF;
+        margin-bottom: 3%;
+    }
+    .div2_perfil{
+        border-top: 1px solid #1E90FF;
+    }
+    .div3_perfil{
+        border-right: 1px solid #1E90FF;
+        border-left: 1px solid #1E90FF;
+        border-top: 1px solid #1E90FF
+    }
+    .div4_perfil{
+        border-right: 1px solid #1E90FF;
+        border-left: 1px solid #1E90FF;
+        border-top: 1px solid #1E90FF;
+        border-bottom: 1px solid #1E90FF;
+    }
+    .div5_perfil{
+        margin-top: 2%;
+        margin-bottom: 0%;
+    }
+    .p_perfil{
+        text-align: center;
+        text-align: 100%;
+        color: black;
+    }
+    .card_perfil{
+        margin-top: 5%;
+    }
+
 }

@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PerfilPage } from '../perfil/perfil';
 
-/**
- * Generated class for the PaginaPrincipalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-pagina-principal',
@@ -16,14 +9,23 @@ import { PerfilPage } from '../perfil/perfil';
 })
 export class PaginaPrincipalPage {
 
+  texto: string = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
+    console.log("refresh");
   }
 
   mudarPerfil(){
     this.navCtrl.push('PerfilPage');
   }
 
+  recarregar(){
+    this.ionViewWillEnter();
+  }
+  enviarPostagem(){
+    console.log(this.texto);
+  }
 }

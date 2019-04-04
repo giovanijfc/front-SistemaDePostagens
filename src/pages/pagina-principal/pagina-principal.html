@@ -6,8 +6,8 @@
     </button>
 
     <div class="align_center">
-      <button ion-button class="btn_paginarPrincipal">
-        <ion-icon color="dark" name="md-list-box"></ion-icon>
+      <button (click)="recarregar()" ion-button class="btn_paginarPrincipal">
+        <ion-icon color="dark" name="refresh"></ion-icon>
       </button>
 
       <button ion-button class="btn_paginarPrincipal" (click)="mudarPerfil()">
@@ -19,7 +19,7 @@
       </button>
       <ion-label><b>Ourbook</b> </ion-label>
     </div>
-    
+
 
   </ion-navbar>
 </ion-header>
@@ -27,4 +27,44 @@
 
 <ion-content padding class="bg_perfil">
 
+  <ion-item no-lines>
+    <span item-left>
+      <ion-icon  name="clipboard"></ion-icon>
+    </span>
+    <ion-input [(ngModel)]="texto" type="text" placeholder="Faça uma nova postagem!">
+    </ion-input>
+    <span class="lb_login" item-right>
+      <button (click)="enviarPostagem()" ion-button clear color="dark"><ion-icon name="send"></ion-icon></button>
+    </span>
+  </ion-item>
+
+  <div class="align2_center">
+    <ion-label><b>POSTAGENS</b></ion-label>
+    <ion-card *ngFor="let topico of topico" color="sexta" class="card_perfil">
+      <div class="div4_perfil">
+        <ion-item color="sexta">
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label stacked class="lbl3_perfil"><b>{{usuario?.nome}} em {{topico?.postPrincipal.data}} às
+              {{topico?.postPrincipal.hora}}</b></ion-label>
+        </ion-item>
+        <ion-card-content>
+          <p class="lbl4_perfil"><b>{{topico?.postPrincipal.texto}}</b></p>
+          <ion-label stacked (click)="mostrarResposta(topico.postPrincipal.id)" class="lbl3_perfil">Ver
+            {{topico?.postPrincipal.resposta.length}} resposta(s):
+          </ion-label>
+        </ion-card-content>
+        <ion-card-content>
+          <div *ngIf="mostrarRes[topico.id]">
+            <div class="div2_perfil" *ngFor="let res of topico.postPrincipal.resposta">
+              <ion-label stacked>
+                <p class="lbl6_perfil"><b>{{res?.usuario.nome}} em {{res?.data}} às
+                    {{res?.hora}}</b></p>
+              </ion-label>
+              <ion-label class="lbl5_perfil"><b>{{res?.texto}}</b></ion-label>
+            </div>
+          </div>
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
 </ion-content>
