@@ -11,7 +11,7 @@ import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 })
 export class HomePage {
 
-  creds : CredenciaisDTO= {
+  creds: CredenciaisDTO = {
     email: "",
     senha: ""
   }
@@ -19,26 +19,25 @@ export class HomePage {
   constructor(public navCtrl: NavController, public menu: MenuController, public authService: AuthService) {
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.menu.swipeEnable(false);
   }
-  ionViewWillLeave(){
+  ionViewWillLeave() {
     this.menu.swipeEnable(true);
   }
-
-  login(){
+  login() {
     this.authService.authenticate(this.creds)
-     .subscribe(response => {
-      this.authService.sucessfulLogin(response.headers.get('Authorization'));
-      this.navCtrl.setRoot("PaginaPrincipalPage");
-     },
-     error => {})
+      .subscribe(response => {
+        this.authService.sucessfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot("PaginaPrincipalPage");
+      },
+        error => { })
   }
-  registrar(){
+  registrar() {
     this.navCtrl.push('RegistrarPage');
   }
 
-  trocarSenha(){
+  trocarSenha() {
     this.navCtrl.push('TrocaSenhaPage');
   }
 }
