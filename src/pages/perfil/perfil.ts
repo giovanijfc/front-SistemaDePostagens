@@ -36,18 +36,9 @@ export class PerfilPage {
         this.topicoService.buscarTodosPost(this.usuario.id)
           .subscribe(response => {
             this.topico = response;
-            console.log(this.topico);
-            for (var i = 0; i < this.topico.length; ++i) {
-              this.topico[i].postPrincipal.data = moment(this.topico[i].postPrincipal.data).format("DD/MM/YYYY [às] HH:mm:ss");
-              this.mostrarRes.push(false);
-            }
-            for (var a = 0; a < this.topico.length; ++a) {
-              if (this.topico[a].postPrincipal.resposta.length === 0) {
-              } else {
-                for (var c = 0; c < this.topico[a].postPrincipal.resposta.length; ++c)
-                  this.topico[a].postPrincipal.resposta[c].data = moment(this.topico[a].postPrincipal.resposta[c].data).format("DD/MM/YYYY [às] HH:mm:ss");
-              }
-            }
+            this.topico.forEach(t => t.postPrincipal.data = moment(t.postPrincipal.data).format("DD/MM/YYYY [às] HH:mm:ss"));
+            this.topico.forEach(t => t.postPrincipal.resposta.forEach(r => r.data = moment(r.data).format("DD/MM/YYYY [às] HH:mm:ss")));
+            this.topico.forEach(t => this.mostrarRes.push(false));
           },
             error => { });
       },

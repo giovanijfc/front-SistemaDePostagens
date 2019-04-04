@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsuarioService } from '../../services/models/usuario.service';
 import { TopicoService } from '../../services/models/topico.service';
+import * as moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -29,9 +30,10 @@ export class PerfilAmigosPage {
         this.topicoService.buscarTodosPost(this.usuario.id)
           .subscribe(response => {
             this.topico = response;
-            for(var i=0; i < this.topico.length; ++i){
-              this.mostrarRes.push(false);
-            }
+            this.topico.forEach(t => t.postPrincipal.data = moment(t.postPrincipal.data).format("DD/MM/YYYY [às] HH:mm:ss"));
+            this.topico.forEach(t => t.postPrincipal.resposta.forEach(r => r.data = moment(r.data).format("DD/MM/YYYY [às] HH:mm:ss")));
+            this.topico.forEach(t => this.mostrarRes.push(false));
+            console.log(this.topico);
           },
             error => { })
       },

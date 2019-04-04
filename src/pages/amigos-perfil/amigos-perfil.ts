@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { UsuarioService } from '../../services/models/usuario.service';
+import * as moment from 'moment';
 
-/**
- * Generated class for the AmigosPerfilPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -30,7 +25,9 @@ export class AmigosPerfilPage {
     this.menu.swipeEnable(false);
     this.nome = this.navParams.get('nome');
     this.amizade = this.navParams.get('amizade')
+    this.amizade.forEach(x => x.data = moment(x.data).format("DD/MM/YYYY"));
   }
+
   buscarAmigo(email: String) {
     this.usuarioService.buscarAmigoPerfil(email)
       .subscribe(response => {

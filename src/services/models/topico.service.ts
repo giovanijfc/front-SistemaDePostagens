@@ -15,4 +15,8 @@ export class TopicoService {
             `${API_CONFIG.baseUrl}/topico/buscarTodosPostUser?idUser=${id}`)
     }
     
+    public buscarTodosPostAmigosESeu(id: String) : Observable<any>{
+        return this.http.get<any>(
+            `${API_CONFIG.baseUrl}/topico/buscarTodosPostAmigosESeus?idUser=${id}`)
+    }
 }
