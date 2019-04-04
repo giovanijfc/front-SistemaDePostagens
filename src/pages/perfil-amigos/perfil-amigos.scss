@@ -27,9 +27,14 @@ page-perfil-amigos {
         color: black;
     }
     .div_perfil{
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
         margin-bottom: 3%;
+    }
+    .div2_perfil{
+        border-top: 1px solid white;
+        border-right:1px solid white;
+        border-left: 1px solid white;
     }
     .p_perfil{
         text-align: center;

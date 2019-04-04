@@ -15,30 +15,34 @@ export class PerfilPage {
   usuario: UsuarioDTO;
   amizade: any[] = [];
   topico: any[] = [];
-  mostrarRes: boolean = false;
+  mostrarRes: boolean[]= [];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public usuarioService: UsuarioService,
     public menu: MenuController,
     public topicoService: TopicoService) {
+    this.mostrarRes = [];
   }
 
   ionViewWillEnter() {
+    this.mostrarRes = [];
     this.menu.swipeEnable(false);
     this.usuarioService.buscarPerfil()
       .subscribe(response => {
         this.amizade = response.amizade;
         this.usuario = response as UsuarioDTO;
         this.topicoService.buscarTodosPost(this.usuario.id)
-        .subscribe(response => {
-          this.topico = response;
-         console.log(this.topico);
-        },
-          error => {})
+          .subscribe(response => {
+            this.topico = response;
+            for(var i=0; i < this.topico.length; ++i){
+              this.mostrarRes.push(false);
+            }
+          },
+            error => { })
       },
         error => { });
-        
+
   }
   ionViewWillLeave() {
     this.menu.swipeEnable(true);
@@ -47,8 +51,11 @@ export class PerfilPage {
   mudarAmigosPage() {
     this.navCtrl.push('AmigosPerfilPage', { nome: this.usuario.nome, amizade: this.amizade })
   }
-  mostrarResposta(){
-    this.mostrarRes = true;
-    console.log("passo aq");
+  mostrarResposta(id: number) {
+    if (this.mostrarRes[id] == true) {
+      this.mostrarRes[id] = false;
+    } else {
+      this.mostrarRes[id] = true;
+    }
   }
 }

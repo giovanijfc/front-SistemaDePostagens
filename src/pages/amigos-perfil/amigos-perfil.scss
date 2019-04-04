@@ -12,10 +12,16 @@ page-amigos-perfil {
         font-size: 120%;
     }
     .item_amigosPerfil{
-        margin-top: 2%;
-        margin-bottom: 2%;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
     .bg_perfil{
         background: rgba(105, 105, 105, 0.26);
+    }
+    .div_amigosPerfil{
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
     }
 }

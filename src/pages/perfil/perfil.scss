@@ -2,6 +2,16 @@ page-perfil {
     .align_center{
         text-align: center;
     }
+    .align2_center{
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        margin-top: 3%;
+    }
     .img_Perfil{
         width: 50%;
         border: 2px solid #fff;
@@ -45,13 +55,27 @@ page-perfil {
         font-size: 95%;
     }
     .div_perfil{
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
         margin-bottom: 3%;
     }
     .div2_perfil{
-        border-bottom: 1px solid white;
         border-top: 1px solid white;
+    }
+    .div3_perfil{
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-top: 1px solid white
+    }
+    .div4_perfil{
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+    .div5_perfil{
+        margin-top: 2%;
+        margin-bottom: 0%;
     }
     .p_perfil{
         text-align: center;

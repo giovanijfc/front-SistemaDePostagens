@@ -6,10 +6,16 @@
 
 
 <ion-content padding class="bg_perfil">
-    <ion-list insert="true" color="primary">
-      <ion-item class="item_amigosPerfil" color="sexta" *ngFor="let a of amizade">
-        <ion-label stacked class="color_page" ><b>Amigos desde: {{a?.data}}</b></ion-label>
-        <ion-label (click)="buscarAmigo(a?.usuarioSecundario.email)"><p class="color_p"><b>{{a?.usuarioSecundario.nome}}</b></p></ion-label>
+
+  <ion-list *ngFor="let a of amizade" insert="true" color="primary">
+    <div class="div_amigosPerfil">
+      <ion-item class="item_amigosPerfil" color="sexta">
+        <ion-label stacked class="color_page"><b>Amigos desde: {{a?.data}}</b></ion-label>
+        <ion-label (click)="buscarAmigo(a?.usuarioSecundario.email)">
+          <p class="color_p"><b>{{a?.usuarioSecundario.nome}}</b></p>
+        </ion-label>
       </ion-item>
-    </ion-list>
+    </div>
+  </ion-list>
+
 </ion-content>
