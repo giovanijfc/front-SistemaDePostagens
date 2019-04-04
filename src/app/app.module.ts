@@ -14,6 +14,7 @@ import { StorageService } from '../services/storage.service';
 import { UsuarioService } from '../services/models/usuario.service';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { HomePage } from '../pages/home/home';
+import { TopicoService } from '../services/models/topico.service';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { HomePage } from '../pages/home/home';
     AuthService,
     ErrorInterceptorProvider,
     StorageService,
-    UsuarioService
+    UsuarioService,
+    TopicoService
   ]
 })
 export class AppModule {}

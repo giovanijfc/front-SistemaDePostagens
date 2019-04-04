@@ -1,9 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FormGroup } from "@angular/forms";
-import { Observable } from "rxjs";
 import { API_CONFIG } from "../../config/api.config";
-import { ResponseType } from "@angular/http";
 import { StorageService } from "../storage.service";
 
 @Injectable()
