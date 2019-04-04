@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
+import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

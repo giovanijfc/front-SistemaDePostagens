@@ -22,4 +22,8 @@ export class PaginaPrincipalPage {
   ionViewDidLoad() {
   }
 
+  mudarPerfil(){
+    this.navCtrl.push('PerfilPage');
+  }
+
 }

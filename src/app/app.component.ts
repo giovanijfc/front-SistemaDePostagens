@@ -14,21 +14,20 @@ import { PerfilPage } from '../pages/perfil/perfil';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: String = 'HomePage';
 
   pages: Array<{ title: string, component: any }>;
 
-  icons: String[] = [];
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Perfil', component: PerfilPage },
-      { title: 'Página Principal', component: PaginaPrincipalPage },
+      { title: 'Perfil', component: 'PerfilPage' },
+      { title: 'Página Principal', component: 'PaginaPrincipalPage' },
       { title: 'Pesquisar Grupos', component: "" },
-      { title: 'Sair', component: HomePage }
+      { title: 'Sair', component: 'HomePage' }
     ];
 
   }
@@ -37,14 +36,13 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.icons = ["md-list-box", "search", "person"]
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
 
   openPage(page) {
-    if (page.component == PerfilPage) {
+    if (page.component == 'PerfilPage') {
       this.nav.push(page.component)
     } else {
       this.nav.setRoot(page.component);

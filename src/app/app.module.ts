@@ -19,8 +19,6 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -30,8 +28,6 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PerfilPage,
-    HomePage,
   ],
   providers: [
     StatusBar,

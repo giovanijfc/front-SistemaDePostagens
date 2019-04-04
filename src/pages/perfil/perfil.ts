@@ -11,6 +11,7 @@ import { UsuarioDTO } from '../../models/usuario.dto';
 export class PerfilPage {
 
   usuario: UsuarioDTO;
+  response: any;
 
 
   constructor(public navCtrl: NavController,
@@ -20,10 +21,11 @@ export class PerfilPage {
 
   ionViewDidLoad() {
     this.usuarioService.buscarPerfil()
-     .subscribe(response => {
-      this.usuario = response as UsuarioDTO;
-     },
-     error => {});
+      .subscribe(response => {
+        console.log(response);
+        this.usuario = response as UsuarioDTO;
+      },
+        error => { });
   }
 
 }

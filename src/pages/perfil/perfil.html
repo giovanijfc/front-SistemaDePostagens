@@ -5,6 +5,22 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg_perfil">
+  <ion-label class="lbl_perfil"><b>Alterar foto</b></ion-label>
+  <div class="align_center">
+    <img class="img_Perfil" src="assets/imgs/teste.jpg">
+    <ion-label class="lbl2_perfil"><b>{{usuario?.nome}}</b></ion-label>
+  </div>
+
+  <div class="div_perfil">
+    <p class="p_perfil"><b>{{usuario?.descricao}}</b></p>
+  </div>
+
+  <ion-card>
+    <ion-item href="#" class="activated">
+      <ion-icon name="wifi" slot="start"></ion-icon>
+      <ion-label><p class="p_perfil"><b>VER AMIGOS</b></p></ion-label>
+    </ion-item>
+  </ion-card>
 
 </ion-content>
