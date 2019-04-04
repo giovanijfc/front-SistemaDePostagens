@@ -2,6 +2,16 @@ page-perfil-amigos {
     .align_center{
         text-align: center;
     }
+    .align2_center{
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        margin-top: 3%;
+    }
     .img_Perfil{
         width: 50%;
         border: 2px solid #fff;
@@ -26,19 +36,58 @@ page-perfil-amigos {
         font-size: 120%;
         color: black;
     }
+    .lbl3_perfil{
+        text-align: right;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 60%;
+        color: black;
+    }
+    .lbl4_perfil{
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 115%;
+        color: black;
+    }
+    .lbl5_perfil{
+        text-align: right;
+        color:black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 95%;
+    }
+    .lbl6_perfil{
+        text-align: right;
+        color:black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 85%;
+    }
     .div_perfil{
         border-bottom: 1px solid white;
         border-top: 1px solid white;
         margin-bottom: 3%;
     }
+    .div3_perfil{
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-top: 1px solid white
+    }
+    .div4_perfil{
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+    }
+    .div5_perfil{
+        margin-top: 2%;
+        margin-bottom: 0%;
+    }
     .div2_perfil{
         border-top: 1px solid white;
-        border-right:1px solid white;
-        border-left: 1px solid white;
     }
     .p_perfil{
         text-align: center;
         text-align: 100%;
         color: black;
+    }
+    .card_perfil{
+        margin-top: 5%;
     }
 }
