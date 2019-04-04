@@ -31,7 +31,7 @@ export class HomePage {
         this.authService.sucessfulLogin(response.headers.get('Authorization'));
         this.navCtrl.setRoot("PaginaPrincipalPage");
       },
-        error => { })
+        error => {})
   }
   registrar() {
     this.navCtrl.push('RegistrarPage');

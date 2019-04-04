@@ -32,8 +32,7 @@
       <div class="div4_perfil">
         <ion-item color="sexta">
           <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label stacked class="lbl3_perfil"><b>{{usuario?.nome}} em {{topico?.postPrincipal.data}} às
-              {{topico?.postPrincipal.hora}}</b></ion-label>
+          <ion-label stacked class="lbl3_perfil"><b>{{usuario?.nome}} em {{topico.postPrincipal.data}}</b></ion-label>
         </ion-item>
         <ion-card-content>
           <p class="lbl4_perfil"><b>{{topico?.postPrincipal.texto}}</b></p>
@@ -44,8 +43,7 @@
         <ion-card-content>
           <div *ngIf="mostrarRes[topico.id]">
             <div class="div2_perfil" *ngFor="let res of topico.postPrincipal.resposta">
-            <ion-label stacked ><p class="lbl6_perfil"><b>{{res?.usuario.nome}} em {{res?.data}} às
-                {{res?.hora}}</b></p></ion-label>
+            <ion-label stacked ><p class="lbl6_perfil"><b>{{res?.usuario.nome}} em {{res?.data}} </b></p></ion-label>
             <ion-label class="lbl5_perfil"><b>{{res?.texto}}</b></ion-label>
             </div>
           </div>
