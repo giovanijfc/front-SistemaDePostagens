@@ -1,10 +1,15 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title><p class="p_amigosPerfil">Amigos de {{nome}}</p></ion-title>
+    <h4>Amigos de {{nome}}</h4>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding class="bg_perfil">
+    <ion-list insert="true" color="primary">
+      <ion-item class="item_amigosPerfil" color="sexta" *ngFor="let a of amizade">
+        <ion-label stacked class="color_page" ><b>Amigos desde: {{a?.data}}</b></ion-label>
+        <ion-label (click)="buscarAmigo(a?.usuarioSecundario.email)"><p class="color_p"><b>{{a?.usuarioSecundario.nome}}</b></p></ion-label>
+      </ion-item>
+    </ion-list>
 </ion-content>

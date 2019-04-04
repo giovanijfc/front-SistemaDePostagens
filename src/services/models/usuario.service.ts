@@ -29,4 +29,9 @@ export class UsuarioService {
             `${API_CONFIG.baseUrl}/usuario/buscar?email=${email}`
         )
     }
+    public buscarAmigoPerfil(email: String) {
+        return this.http.get(
+            `${API_CONFIG.baseUrl}/usuario/buscar?email=${email}`
+        )
+    }
 }

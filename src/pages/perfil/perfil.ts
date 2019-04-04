@@ -12,8 +12,7 @@ import { MenuController } from 'ionic-angular/components/app/menu-controller';
 export class PerfilPage {
 
   usuario: UsuarioDTO;
-  response: any;
-
+  amizade: any;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -23,21 +22,18 @@ export class PerfilPage {
 
   ionViewWillEnter() {
     this.menu.swipeEnable(false);
+    this.usuarioService.buscarPerfil()
+      .subscribe(response => {
+        this.amizade = response.amizade;
+        this.usuario = response as UsuarioDTO;
+      },
+        error => { });
   }
   ionViewWillLeave() {
     this.menu.swipeEnable(true);
   }
 
-  ionViewDidLoad() {
-    this.usuarioService.buscarPerfil()
-      .subscribe(response => {
-        console.log(response);
-        this.usuario = response as UsuarioDTO;
-      },
-        error => { });
-  }
-
   mudarAmigosPage(){
-    this.navCtrl.push('AmigosPerfilPage', {nome: this.usuario.nome})
+    this.navCtrl.push('AmigosPerfilPage', {nome: this.usuario.nome, amizade: this.amizade})
   }
 }
