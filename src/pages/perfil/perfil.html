@@ -47,6 +47,11 @@
             <ion-label class="lbl5_perfil"><b>{{res?.texto}}</b></ion-label>
             </div>
           </div>
+          <div *ngIf="mostrarRes[topico.id]">
+            <ion-label (click)="mostrarResposta(topico.postPrincipal.id)" stacked class="lbl3_perfil">
+              Esconder respostas
+            </ion-label>
+          </div>
         </ion-card-content>
       </div>
     </ion-card>

@@ -17,7 +17,8 @@ export class PaginaPrincipalPage {
 
   texto: string = "";
   usuario: UsuarioDTO;
-  postagens: any [] = [];
+  topico: any [] = [];
+  mostrarRes: any[] = [];
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
@@ -30,15 +31,13 @@ export class PaginaPrincipalPage {
 
   ionViewWillEnter() {
     this.usuarioService.buscarPerfil()
-      .subscribe(response => {
+      .subscribe((response:any) => {
         this.usuario = response as UsuarioDTO;
         this.topicoService.buscarTodosPostAmigosESeu(this.usuario.id)
-          .subscribe(response => {
-            console.log(response);
-            response.forEach(t => t.data = moment(t.data).format("DD/MM/YYYY [às] HH:mm:ss"));
-            response.forEach(t => t.resposta.forEach(r => r.data = moment(r.data).format("DD/MM/YYYY [às] HH:mm:ss")));
-            this.postagens = response;
-            
+          .subscribe((response:any) => {
+            this.topico = response;
+            this.topico.forEach(t => t.postPrincipal.data = moment(t.postPrincipal.data).format("DD/MM/YYYY [às] HH:mm:ss"));
+            this.topico.forEach(t => t.postPrincipal.resposta.forEach(r => r.data = moment(r.data).format("DD/MM/YYYY [às] HH:mm:ss")));
           },
           error => {});
       },
@@ -54,19 +53,11 @@ export class PaginaPrincipalPage {
   enviarPostagem(){
     this.postagemService.enviarPostagem(this.usuario.id, this.texto)
       .subscribe(response => {
-        this.showInsertOk();
+        this.ionViewWillEnter();
       },
-      error => {console.log(error)});
+      error => {});
   }
-  showInsertOk() {
-    let alert = this.alertCtrl.create({
-      title: "Status 200: Sucesso!",
-      message: "Sua postagem foi feita com sucesso!",
-      enableBackdropDismiss: false,
-      buttons: [{
-        text: "Continuar",
-      }]
-    });
-    alert.present();
+  mostrarResposta(id: number) {
+    this.mostrarRes[id] = !this.mostrarRes[id];
   }
 }

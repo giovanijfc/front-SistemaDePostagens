@@ -30,7 +30,7 @@ export class PerfilPage {
     this.mostrarRes = [];
     this.menu.swipeEnable(false);
     this.usuarioService.buscarPerfil()
-      .subscribe(response => {
+      .subscribe((response: any) => {
         this.amizade = response.amizade;
         this.usuario = response as UsuarioDTO;
         this.topicoService.buscarTodosPost(this.usuario.id)
@@ -38,7 +38,6 @@ export class PerfilPage {
             this.topico = response;
             this.topico.forEach(t => t.postPrincipal.data = moment(t.postPrincipal.data).format("DD/MM/YYYY [às] HH:mm:ss"));
             this.topico.forEach(t => t.postPrincipal.resposta.forEach(r => r.data = moment(r.data).format("DD/MM/YYYY [às] HH:mm:ss")));
-            this.topico.forEach(t => this.mostrarRes.push(false));
           },
             error => { });
       },
@@ -54,10 +53,6 @@ export class PerfilPage {
   }
 
   mostrarResposta(id: number) {
-    if (this.mostrarRes[id] == true) {
-      this.mostrarRes[id] = false;
-    } else {
-      this.mostrarRes[id] = true;
-    }
+    this.mostrarRes[id] = !this.mostrarRes[id];
   }
 }

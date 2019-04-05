@@ -25,25 +25,19 @@ export class PerfilAmigosPage {
   ionViewWillEnter() {
     this.usuario = this.navParams.get("usuario");
     this.usuarioService.buscarAmigoPerfil(this.usuario.email)
-      .subscribe(response => {
+      .subscribe((response:any) => {
         this.amizade = response.amizade;
         this.topicoService.buscarTodosPost(this.usuario.id)
-          .subscribe(response => {
+          .subscribe((response:any) => {
             this.topico = response;
             this.topico.forEach(t => t.postPrincipal.data = moment(t.postPrincipal.data).format("DD/MM/YYYY [às] HH:mm:ss"));
             this.topico.forEach(t => t.postPrincipal.resposta.forEach(r => r.data = moment(r.data).format("DD/MM/YYYY [às] HH:mm:ss")));
-            this.topico.forEach(t => this.mostrarRes.push(false));
-            console.log(this.topico);
           },
             error => { })
       },
         error => { })
   }
   mostrarResposta(id: number) {
-    if (this.mostrarRes[id] == true) {
-      this.mostrarRes[id] = false;
-    } else {
-      this.mostrarRes[id] = true;
-    }
+    this.mostrarRes[id] = !this.mostrarRes[id];
   }
 }

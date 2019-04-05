@@ -30,7 +30,7 @@ export class AmigosPerfilPage {
 
   buscarAmigo(email: String) {
     this.usuarioService.buscarAmigoPerfil(email)
-      .subscribe(response => {
+      .subscribe((response:any) => {
         this.amigo = response;
         this.navCtrl.push('PerfilAmigosPage', {usuario: this.amigo});
       },

@@ -32,8 +32,6 @@ export class ErrorInterceptor implements HttpInterceptor {
                         break;
                     case 400:
                         if (errorObj.message == "Required request body is missing: public org.springframework.http.ResponseEntity<com.giovanijfc.sistemadepostagens.domain.Postagem> com.giovanijfc.sistemadepostagens.resource.PostagemResource.adicionar(java.lang.String,java.lang.Integer)") {
-                            errorObj.message = "Dados da postagem incorreta, tente novamente!";
-                            this.handle400(errorObj);
                             break;
                         }else{
                             this.handle400(errorObj);
